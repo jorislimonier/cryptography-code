@@ -3,12 +3,12 @@ Implementation of some cryptography concepts seen in class.
 
 ## Codes implemented
 - Caesar cipher
-- Vigenère cipher
+- Vigenère cipher (partially)
 
 ## TODO
 - Finsih Vigenère
-    - **Find key length** Find outliers with respect to the frequency when shifting letters
-    - **Find key** Compare frequency of letters with english and french (switching from french to english should simply be a change of parameter :arrow_right: use dataframe `df_freq_letter`)
+    1. Use most likely keys lengths to get key
+    2. **Frequency analysis:** Compare frequency of letters with english and french (switching from french to english should simply be a change of parameter :arrow_right: use dataframe `df_freq_letter`)
 - Class-ify the code because it's cooler
 - Add documentation in readme to explain the train of thought for each file
 
