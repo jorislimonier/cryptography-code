@@ -16,31 +16,30 @@ ui <- fluidPage(
         #Textbox for the code
         sidebarPanel(
             textInput("code", "Code to decypher",
-                      value = "XCXWGHHWNSEMGBYIPI",
-                      width = '800px', placeholder = "Hello"),
+                      width = '800px', placeholder = "CYPHERTEXT"),
             # actionButton("Code", "Code"),
-        
-        #Slider for the key length
-        sliderInput("keylength",
+            
+            #Slider for the key length
+            sliderInput("keylength",
                         "Key length",
                         min = 0,
                         max = 32,
                         value = 0),
-        
-        #Slider to select characters in position k + Z*keylength
-        sliderInput("Charnum",
+            
+            #Slider to select characters in position k + Z*keylength
+            sliderInput("Charnum",
                         "Searching for key's k-th character",
                         min = 1,
                         max = 32,
                         value = 1),
-
-        #Slider for k-th letter of the key
-        sliderTextInput("KeyLet",
-                        "Possible k-th letter of the key",
-                        LETTERS),
-
-        #Textbox for to enter the key
-        textInput("key","Enter key here",value="CODE")
+            
+            #Slider for k-th letter of the key
+            sliderTextInput("KeyLet",
+                            "Possible k-th letter of the key",
+                            LETTERS),
+            
+            #Textbox for to enter the key
+            textInput("key","Enter key here",placeholder="KEY")
         ),
         
         # Output of the program (see server for more details)
@@ -78,29 +77,29 @@ server <- function(input, output) {
                 as_tibble() %>% #converting into tibble (lazy data.frame) for ease of manipulation
                 set_colnames(c("let","count")) %>% #rename the headers of the data frame
                 mutate(freq = count/sum(count), #mutate adds some columns, here the column 'freq' to return frequency
-                    r = rank(-freq,ties.method = "max")) #also add the rank of the letters.
+                       r = rank(-freq,ties.method = "max")) #also add the rank of the letters.
         }
         coincidence <- function(n){
-          sapply(n:z,FUN=function(k) (chars[k] == chars[k-n])) %>% unlist() %>% sum
+            sapply(n:z,FUN=function(k) (chars[k] == chars[k-n])) %>% unlist() %>% sum
         }
         
         FindKeyLength <- data.frame(x=1:32,c=sapply(1:32,coincidence)) %>% 
-          ggplot() + 
-          geom_col(aes(x,c)) + 
-          labs(x="Possible key length",y="Number of coincidences") + 
-          theme_minimal()
+            ggplot() + 
+            geom_col(aes(x,c)) + 
+            labs(x="Possible key length",y="Number of coincidences") + 
+            theme_minimal()
         
         #Define a function that will take a characters vectors and return a plot.
         dec <- function(n,k){
             s = FreqTable(chars[seq(input$Charnum,z,k)])                # seq(a,b,c) returns a sequence (a,a+c,a+2c,... ) until b
-                                                                        # here I am just filtering the letters of the cyphertext
-                                                                        # and apply the FreqTable function on it.
+            # here I am just filtering the letters of the cyphertext
+            # and apply the FreqTable function on it.
             B = s %>% mutate(acnum = match(let,LETTERS),                # adding few columns: acnum = number associated with letter
                              num = mod(match(let,LETTERS)-n-1,26)+1,    # Shift number by n, modulo 26
                              newlet = LETTERS[num])                     # Return the shifted letter
             
             # ggplot is used to make plots. The first one I commented out returns the plot based on frequency, the second one returns plot based on rank (E which is the most used letter will be associated with 27-1 = 26, A (second most used letter) will be associated to 27-2 = 25, etc. until 1)
-
+            
             # ggplot() +
             #     geom_bar(data = FREQ, aes(let,freq/max(freq)), fill="red",alpha = .5, stat="identity") +
             #     geom_bar(data = B, aes(newlet,freq/max(freq)),alpha=.5, fill="blue",stat="identity") +
@@ -114,7 +113,7 @@ server <- function(input, output) {
         }
         if(input$keylength == 0){FindKeyLength} else {dec(LETNUM,keylen)} # Call the function defined up there: LETNUM is the letter selected in the slider.
     })
-
+    
     #Now, also generate an output for the decyphered text.
     output$decoded <- renderText({
         chars = input$code %>% strsplit('') %>% unlist() #Once again transfort text into a character vector
