@@ -1,21 +1,48 @@
 # Cryptography code
+
 Implementation of some cryptography concepts seen in class.
 
 ## Codes implemented
-- Caesar cipher
-- Vigenère cipher (partially)
+
+|                 | Python | R                                                      |
+| --------------- | ------ | ------------------------------------------------------ |
+| Caesar cipher   | Yes    | No                                                     |
+| Vigenère cipher | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
+
+### Folder structure
+
+```bash
+|
+├── Caesar
+|   └── Caesar Python
+└── Vigenère
+    ├── Vigenère Python
+    └── Vigenère R
+```
 
 ## TODO
-- Finsih Vigenère
+
+- **Python**
+  - Finsih Vigenère
     1. Use most likely keys lengths to get key
     2. **Frequency analysis:** Compare frequency of letters with english and french (switching from french to english should simply be a change of parameter :arrow_right: use dataframe `df_freq_letter`)
-- Class-ify the code because it's cooler
-- Add documentation in readme to explain the train of thought for each file
+  - Class-ify the code because it's cooler
+  - Add documentation in readme to explain the train of thought for each file
+- **R**
+  - Add documentation
 
 ## Contributions
-All contributions are welcome. My code can very much be improved, be it corrections, comments, code cleaning...etc.
+
+### Future contributions
+
+All contributions are welcome. The code can very much be improved, be it corrections, comments, code cleaning...etc.
 
 If you are familiar with other programming languages, you are very welcome to send me your implemention of the concepts seen in class and I will post them in this repo.
 
+### Past contributions
+
+Thank you to Sébastien PLAASCH for providing the R code, as well as making the app [accessible online via browser](https://plaaschou.shinyapps.io/Decypher/). Sébastien specifically provided heavy comments in the code in order to make it understandable to newcomers. He also described the decipher-helper process in the mobile
+
 ## Get in touch
+
 For any question/remark, please feel free to email me at joris.limonier.001@student.uni.lu
