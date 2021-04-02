@@ -41,8 +41,8 @@ If you are familiar with other programming languages, you are very welcome to se
 
 ### Past contributions
 
-Thank you to Sébastien PLAASCH for providing the R code, as well as making the app [accessible online via browser](https://plaaschou.shinyapps.io/Decypher/). Sébastien specifically provided heavy comments in the code in order to make it understandable to newcomers. He also described the decipher-helper process in the mobile
+Thank you to Sébastien PLAASCH (sebastien.plaasch.001@student.uni.lu) for providing the R code, as well as making the app [accessible online via browser](https://plaaschou.shinyapps.io/Decypher/). Sébastien specifically provided heavy comments in the code in order to make it understandable to newcomers. He also described the decipher-helper process in the mobile
 
 ## Get in touch
 
-For any question/remark, please feel free to email me at joris.limonier.001@student.uni.lu
+For any question/remark, please feel free to email me at joris.limonier.001@student.uni.lu .
