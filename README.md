@@ -3,22 +3,23 @@
 Implementation of some cryptography concepts seen in class.
 
 ## Table of contents
-* [Codes implemented](#odes-implemented)
-  * [Folder structure](#folder-structure)
-* [TODO](#todo)
-* [Log](#log)
-* [Contributions](#contributions)
-  * [Future contributions](#future-contributions)
-  * [Past contributions](#past-contributions)
-* [Get in touch](#get-in-touch)
+
+- [Codes implemented](#odes-implemented)
+  - [Folder structure](#folder-structure)
+- [TODO](#todo)
+- [Log](#log)
+- [Contributions](#contributions)
+  - [Future contributions](#future-contributions)
+  - [Past contributions](#past-contributions)
+- [Get in touch](#get-in-touch)
 
 ## Codes implemented
 
-|                 | Python | R                                                      | Julia |
-| --------------- | ------ | ------------------------------------------------------ | ----- |
-| Caesar cipher   | Yes    | No                                                     | No    |
-| Vigenère cipher | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) | No    |
-| Substitution    | No     | No                                                     | Yes   |
+|                 | Julia | Python | R                                                      |
+| --------------- | ----- | ------ | ------------------------------------------------------ |
+| Caesar cipher   | Yes   | Yes    | No                                                     |
+| Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
+| Substitution    | Yes   | No     | No                                                     |
 
 ### Folder structure
 
