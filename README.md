@@ -2,12 +2,23 @@
 
 Implementation of some cryptography concepts seen in class.
 
+## Table of contents
+* [Codes implemented](#odes-implemented)
+  * [Folder structure](#folder-structure)
+* [TODO](#todo)
+* [Log](#log)
+* [Contributions](#contributions)
+  * [Future contributions](#future-contributions)
+  * [Past contributions](#past-contributions)
+* [Get in touch](#get-in-touch)
+
 ## Codes implemented
 
-|                 | Python | R                                                      |
-| --------------- | ------ | ------------------------------------------------------ |
-| Caesar cipher   | Yes    | No                                                     |
-| Vigenère cipher | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
+|                 | Python | R                                                      | Julia |
+| --------------- | ------ | ------------------------------------------------------ | ----- |
+| Caesar cipher   | Yes    | No                                                     | No    |
+| Vigenère cipher | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) | No    |
+| Substitution    | No     | No                                                     | Yes   |
 
 ### Folder structure
 
@@ -15,9 +26,11 @@ Implementation of some cryptography concepts seen in class.
 |
 ├── Caesar
 |   └── Caesar Python
-└── Vigenère
-    ├── Vigenère Python
-    └── Vigenère R
+├── Vigenère
+|   ├── Vigenère Python
+|   └── Vigenère R
+└── Substitution
+    └── Substition Julia
 ```
 
 ## TODO
@@ -30,6 +43,11 @@ Implementation of some cryptography concepts seen in class.
   - Add documentation in readme to explain the train of thought for each file
 - **R**
   - Add documentation
+
+## Log
+
+**16/04/21:** Substitution (Julia)\
+**Prior to 16/04/21:** Caesar cipher (Python & R), Vigenère cipher (Python)
 
 ## Contributions
 
