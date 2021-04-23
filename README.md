@@ -1,7 +1,6 @@
 # Cryptography code
 
-Implementation of some cryptography concepts seen in class.
-
+Coding / decoding of several ciphers (see below for details).
 ## Table of contents
 
 - [Codes implemented](#odes-implemented)
