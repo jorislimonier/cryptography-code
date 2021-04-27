@@ -24,7 +24,7 @@ Coding / decoding of several ciphers (see below for details).
 
 ### Folder structure
 
-```bash
+```
 |
 ├── Caesar
 |   └── Caesar Python
