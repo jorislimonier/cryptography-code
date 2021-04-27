@@ -1,6 +1,7 @@
 # Cryptography code
 
 Coding / decoding of several ciphers (see below for details).
+
 ## Table of contents
 
 - [Codes implemented](#odes-implemented)
@@ -19,6 +20,7 @@ Coding / decoding of several ciphers (see below for details).
 | Caesar cipher   | Yes   | Yes    | No                                                     |
 | Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
 | Substitution    | Yes   | No     | No                                                     |
+| Permutation     | Yes   | No     | No                                                     |
 
 ### Folder structure
 
@@ -29,14 +31,16 @@ Coding / decoding of several ciphers (see below for details).
 ├── Vigenère
 |   ├── Vigenère Python
 |   └── Vigenère R
-└── Substitution
-    └── Substition Julia
+├── Substitution
+|   └── Substition Julia
+└── Permutation
+    └── Permutation Julia
 ```
 
 ## TODO
 
 - **Python**
-  - Finsih Vigenère
+  - Finish Vigenère
     1. Use most likely keys lengths to get key
     2. **Frequency analysis:** Compare frequency of letters with english and french (switching from french to english should simply be a change of parameter :arrow_right: use dataframe `df_freq_letter`)
   - Class-ify the code because it's cooler
@@ -44,10 +48,6 @@ Coding / decoding of several ciphers (see below for details).
 - **R**
   - Add documentation
 
-## Log
-
-**16/04/21:** Substitution (Julia)\
-**Prior to 16/04/21:** Caesar cipher (Python & R), Vigenère cipher (Python)
 
 ## Contributions
 
@@ -64,3 +64,20 @@ Thank you to Sébastien PLAASCH (sebastien.plaasch.001@student.uni.lu) for provi
 ## Get in touch
 
 For any question/remark, please feel free to email me at joris.limonier.001@student.uni.lu .
+
+## Log
+
+#### 27/04/21:
+
+- Renamed substitution Julia
+- Added variants of substitution Julia
+- Permutation (Julia)
+
+#### 16/04/21:
+
+- Substitution (Julia)
+
+#### Prior to 16/04/21:
+
+- Caesar cipher (Python & R)
+- Vigenère cipher (Python)
