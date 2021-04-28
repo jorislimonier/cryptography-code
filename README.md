@@ -50,6 +50,7 @@ Coding / decoding of several ciphers ( details below).
   - Add documentation in readme to explain the train of thought for each file
 - **R**
   - Add documentation
+  - Address #3
 
 ## Contributions
 
