@@ -25,7 +25,7 @@ end
 
 decrypt()
 
-a = 240
+a = 241
 b = 46
 function eucl_ext_alg(a,b)
     r0 = a
