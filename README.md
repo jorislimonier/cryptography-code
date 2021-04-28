@@ -1,6 +1,6 @@
 # Cryptography code
 
-Coding / decoding of several ciphers (see below for details).
+Coding / decoding of several ciphers ( details below).
 
 ## Table of contents
 
