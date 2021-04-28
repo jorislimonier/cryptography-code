@@ -21,6 +21,7 @@ Coding / decoding of several ciphers (see below for details).
 | Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
 | Substitution    | Yes   | No     | No                                                     |
 | Permutation     | Yes   | No     | No                                                     |
+| RSA             | Yes   | No     | No                                                     |
 
 ### Folder structure
 
@@ -49,7 +50,6 @@ Coding / decoding of several ciphers (see below for details).
   - Add documentation in readme to explain the train of thought for each file
 - **R**
   - Add documentation
-
 
 ## Contributions
 
