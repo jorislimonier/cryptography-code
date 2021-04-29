@@ -1,6 +1,6 @@
 # Cryptography code
 
-Coding / decoding of several ciphers (see below for details).
+Coding / decoding of several ciphers ( details below).
 
 ## Table of contents
 
@@ -21,6 +21,7 @@ Coding / decoding of several ciphers (see below for details).
 | Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
 | Substitution    | Yes   | No     | No                                                     |
 | Permutation     | Yes   | No     | No                                                     |
+| RSA             | Yes   | No     | No                                                     |
 
 ### Folder structure
 
@@ -33,8 +34,10 @@ Coding / decoding of several ciphers (see below for details).
 |   └── Vigenère R
 ├── Substitution
 |   └── Substition Julia
-└── Permutation
-    └── Permutation Julia
+├── Permutation
+|   └── Permutation Julia
+└── RSA
+    └── RSA Julia (under construction)
 ```
 
 ## TODO
@@ -47,7 +50,7 @@ Coding / decoding of several ciphers (see below for details).
   - Add documentation in readme to explain the train of thought for each file
 - **R**
   - Add documentation
-
+  - Add useful error message when no key is input (Vigenère)
 
 ## Contributions
 
@@ -59,13 +62,20 @@ If you are familiar with other programming languages, you are very welcome to se
 
 ### Past contributions
 
-Thank you to Sébastien PLAASCH (sebastien.plaasch.001@student.uni.lu) for providing the R code, as well as making the app [accessible online via browser](https://plaaschou.shinyapps.io/Decypher/). Sébastien specifically provided heavy comments in the code in order to make it understandable to newcomers. He also described the decipher-helper process in the mobile
+Thank you to Sébastien PLAASCH (sebastien.plaasch.001@student.uni.lu) for providing the R code, as well as making the app [accessible online via browser](https://plaaschou.shinyapps.io/Decypher/). Sébastien specifically provided heavy comments in the code in order to make it understandable to newcomers.
 
 ## Get in touch
 
 For any question/remark, please feel free to email me at joris.limonier.001@student.uni.lu .
 
 ## Log
+
+<details>
+<summary>Click to open</summary>
+
+#### 28/04/21:
+
+- Start of RSA implemention in Julia.
 
 #### 27/04/21:
 
@@ -79,5 +89,10 @@ For any question/remark, please feel free to email me at joris.limonier.001@stud
 
 #### Prior to 16/04/21:
 
-- Caesar cipher (Python & R)
+- Caesar cipher (Julia)
+- Caesar cipher (Python)
+- Vigenère cipher (Julia)
 - Vigenère cipher (Python)
+- Vigenère cipher (R)
+
+</details>
