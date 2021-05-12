@@ -1,0 +1,324 @@
+% TO DO:
+% - Change title
+% - Change due date
+% - Change page footer
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, width=150mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{babel}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{bookmark}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% JULIA ALGORITHM STYLING
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={\$},%
+   morecomment=[l]{\#},%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstset{%
+    language			= Julia,
+    basicstyle			= \ttfamily,
+    keywordstyle		= \bfseries\color{blue},
+    stringstyle			= \color{purple},
+    commentstyle     	= \color{teal},
+    showstringspaces 	= false,
+	numbers				= left,
+	breaklines			= true,
+	breakatwhitespace	= false,
+	basicstyle 			= \footnotesize
+}
+
+
+
+\hypersetup{
+    colorlinks,
+    urlcolor={blue!80!black},
+    linkcolor={red!50!black},
+}
+
+\fancyhf{}
+\fancyhead[L]{Théorie des nombres et application à la cryptographie}
+\fancyhead[R]{Midterm}
+\fancyfoot[R]{\bfseries \thepage \, sur \ \!\pageref{LastPage}}
+\fancyfoot[L]{Joris LIMONIER}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\setlength{\headheight}{15pt}
+
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+
+\newcommand{\ie}{\textit{i.e.} }
+\newcommand{\pg}{\operatorname{pgcd}}
+
+\title{Théorie des nombres et application à la cryptographie: Midterm}
+\author{Joris LIMONIER}
+\date{Le 30 Avril 2021}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+
+
+\section{Exercice 1}
+\subsection{Partie (a)}
+
+Nous applicons l'algorithme d'Euclide:
+\begin{align*}
+    495 & = 7 * 68 + 19  \\
+    68  & = 3 * 19  + 11 \\
+    19  & = 1 * 11  + 8  \\
+    11  & = 1 * 8  + 3   \\
+    8   & = 2 * 3  + 2   \\
+    3   & = 1 * 2  + 1   \\
+    2   & = 2 * 1  + 0   \\
+\end{align*}
+
+Puis nous remontons la chaine d'inégalité
+\begin{align*}
+    1 & = 3    - 1 * 2                 \\
+      & = 3    - 1 * (8 - 2*3)         \\
+      & = 3 * 3    - 1 * 8             \\
+      & = 3 * (11 - 1*8)    - 1 * 8    \\
+      & = 3 * 11 - 4 * 8               \\
+      & = 3 * 11 - 4 * (19 - 1*11)     \\
+      & = 7 * 11 - 4 * 19              \\
+      & = 7 * (68 - 3 * 19) - 4 * 19   \\
+      & = 7 * 68 - 25 * 19             \\
+      & = 7 * 68 - 25 * (495 - 7 * 68) \\
+      & = 182 * 68 - 25 * 495          \\
+\end{align*}
+
+Nous avons donc que
+\begin{align*}
+             & 182 * 68 - 25 * 495 = 1     \\
+    \implies & - 25 * 495 \equiv 1 \mod 68 \\
+    \implies & 43 * 495 \equiv 1 \mod 68   \\
+\end{align*}
+
+Ainsi, 43 est l'inverse de $a$ dans $\mathbb{Z} / 68 \mathbb{Z}$
+
+\subsection{Partie (b)}
+
+Ce problème revient à trouver la quantité suivante
+
+$$3^{1607} \equiv 187 \mod 100$$
+
+D'abord nous avons que
+$$\varphi (100) = 2^{2-1} * (2 - 1) * 5^{2-1} * (5 - 1) = 40$$
+
+Nous invoquons le théorème d'Euler. Nous avons
+$$1607 = 1600 + 7 = 40 * 40 + 7 \equiv 7 \mod 40$$
+
+Donc, par l’identité d’Euler, on a
+$$3^{1607} \equiv 3^7 = 2187 \equiv 187 \mod 100$$
+
+
+
+\section{Exercice 2}
+\subsection{Partie (a)}
+
+L'élément en position 3 passe en position 5, le 5 passe en 1, le 1 en 3 d'une part. D'autre part, le 2 passe en position 4 et le 4 en 2.
+$$ralepibtyamoencecmen$$
+
+\subsection{Partie (b)}
+
+On procède similairement à la partie (a) pour obtenir
+$$cestlemidtermparty$$
+
+
+\section{Exercice 3}
+\subsection{Partie (a)}
+
+Voilà le nombre d'apparition de chaque lettre dans le message chiffré.
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Lettre & Fréquence \\
+        \hline
+        $c$    & 1         \\
+        $g$    & 3         \\
+        $h$    & 2         \\
+        $j$    & 1         \\
+        $l$    & 1         \\
+        $m$    & 1         \\
+        $p$    & 1         \\
+        $q$    & 2         \\
+        $r$    & 4         \\
+        $s$    & 6         \\
+        $u$    & 1         \\
+        $v$    & 2         \\
+        $w$    & 4         \\
+        $x$    & 2         \\
+        $y$    & 8         \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Les autres lettres n'apparaissent pas. Le $y$ est le plus fréquent, ensuite c'est le $s$. \\
+Si nous identifions le $y$ avec le $E$, nous avons une clef de 20, ce qui signifie que les $s$, qui sont également très nombreux, seraient chiffrés en $Y$. Cela paraît peu probable.
+
+Mais nous savons que les clefs trop courtes peuvent ne pas être représentatives des fréquences de lettres dans la langue française. Nous estimons donc qu'il n'est pas possible de déchiffrer ce message avec si peu d'information.
+
+\subsection{Partie (b)}
+
+Avec ces informations supplémentaires, nous avons que les $O$ ont été chiffrés en $s$, c'est à dire une clef de 4. De même, $U$ ont été chiffrés en $y$.
+
+En conservant cette même clef, nous avons que les quatre premières lettres du message chiffré nous donnent:
+
+\begin{align*}
+    r & \to N \\
+    s & \to O \\
+    y & \to U \\
+    w & \to S \\
+\end{align*}
+
+Ainsi, les quatre premières lettres du message déchiffré sont
+$$NOUS$$
+
+L'exercice est terminé mais dans un élan d'engouement, nous déchiffrons le texte entier, qui est:
+
+$$NOUSCROYONSTOUSQUILFUTUNDUCHORSDUCOMMUN$$
+
+\section{Exercice 4}
+\subsection{Partie (a)}
+
+Nous voulons exprimer $\alpha^{10}$ dans la base $1, \alpha, \alpha^2, \alpha^3$. \\
+Comme $\mathbb{F}_{81}$ est de degré 4 sur $\mathbb{F}_{3}$, on cherche un polynôme irréductible de dergré 4, qui admettra nécessairement une racine dans ce corps. \\
+Puisque $\alpha$ est une racine de $f$ dans $\mathbb{F}_{81}$, on a que
+
+\begin{equation}
+    \label{eqn: f}
+    \alpha^4 + \alpha^3 - 1 = 0
+\end{equation}
+
+
+D'où
+
+$$\alpha^5 = 1 - \alpha^3$$
+
+Ainsi,
+\begin{align*}
+    \alpha^{10} & = \left( \alpha^{5} \right)^2   \\
+                & = \left( 1 - \alpha^3 \right)^2 \\
+                & = 1 + \alpha^6 - 2 \alpha^3     \\
+\end{align*}
+
+Nous devons évaluer $\alpha^6$. Pour cela nous multiplions \eqref{eqn: f} par $\alpha^2$ pour obtenir
+
+$$\alpha^6 = \alpha^2 - \alpha^5$$
+
+Alors nous avons
+
+\begin{align*}
+    \alpha^{10} & = 1 + \alpha^6 - 2 \alpha^3            \\
+                & = 1 + (\alpha^2 - \alpha^5) - 2 \alpha^3 \\
+                & = 1 + \alpha^2 - (1 - \alpha^3) - 2 \alpha^3 \\
+                & = \alpha^2 - \alpha^3 \\
+\end{align*}
+
+
+\subsection{Partie (b)}
+
+Nous savons que $\mathbb{F}_{81}^\times$ est un groupe cyclique d'ordre $3^{4} - 1 = 80$, donc l'ordre de $\theta$ est un diviseur de 80. Or, comme $\theta = \alpha^2 - \alpha^3$ ...
+
+
+\subsection{Partie (c)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{figure}[H]
+% 	\center
+% 	\includegraphics[width=.8\textwidth]{}
+% 	\caption{Résultat du déchiffrement avec $n\_most\_likely = 1$ (Vigenère)}
+% \end{figure}
+
+% \newpage
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Evaluation des exercices}
+% \begin{center}
+% 	\begin{tabular}{ |c|c|c| }
+% 		\hline
+% 		\multicolumn{3}{|c|}{\textbf{Exercice 1}}                                        \\
+% 		\hline \hline
+% 		\textbf{Outils utilisés} & \textbf{Résolution}              & \textbf{Remarques} \\
+% 		\hline
+% 		                         & Résolu après un peu de réflexion &                    \\
+% 		\hline
+% 		\multicolumn{3}{c}{}
+% 	\end{tabular}
+% 	\begin{tabular}{ |c|c|c| }
+% 		\hline
+% 		\multicolumn{3}{|c|}{\textbf{Exercice 2}}                                        \\
+% 		\hline \hline
+% 		\textbf{Outils utilisés} & \textbf{Résolution}              & \textbf{Remarques} \\
+% 		\hline
+% 		Autres sites             & Résolu après beaucoup de travail &                    \\
+% 		internet                 &                                  &                    \\
+% 		\hline
+% 	\end{tabular}
+% 	\begin{tabular}{ |c|c|c| }
+% 		\hline
+% 		\multicolumn{3}{|c|}{\textbf{Exercice 3}}                                        \\
+% 		\hline \hline
+% 		\textbf{Outils utilisés} & \textbf{Résolution}              & \textbf{Remarques} \\
+% 		\hline
+% 		Cours                    & Résolu après beaucoup de travail &                    \\
+% 		\hline
+% 		\multicolumn{3}{c}{}
+% 	\end{tabular}
+% 	\begin{tabular}{ |c|c|c| }
+% 		\hline
+% 		\multicolumn{3}{|c|}{\textbf{Exercice 4}}                                        \\
+% 		\hline \hline
+% 		\textbf{Outils utilisés} & \textbf{Résolution}              & \textbf{Remarques} \\
+% 		\hline
+% 		                         & Résolu après beaucoup de travail &                    \\
+% 		\hline
+% 		\multicolumn{3}{c}{}
+% 	\end{tabular}
+% \end{center}
+
+\label{LastPage}
+\end{document}
+
+
+

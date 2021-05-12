@@ -1,5 +1,5 @@
-cycles = [[1, 3], [2, 4, 5]]
-message_ex1 = "melsegeseadesctptrey"
+cycles = [[2, 4], [1, 3, 5]]
+message = "ralepibtyamoencecmen"
 
 "find element of cycles which should replace original_elem"
 function substitute_of(original_elem, cycles)
@@ -43,4 +43,4 @@ function substitute_message(message, cycles, decipher)
     return substituted_message
 end
 
-substitute_message(message_ex1, cycles, true) # returns "lemessageestdecrypte"
+substitute_message(message, cycles, false) 

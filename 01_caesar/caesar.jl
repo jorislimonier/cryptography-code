@@ -1,5 +1,5 @@
 ONE_A = "la rencontre a lieu ce matin" 
-ONE_B = "HJXYQJUFWYDIZAJSIWJIN"
+ONE_B = "RSYWGVSCSRWXSYWUYMPJYXYRHYGLSVWHYGSQQYR"
 
 function shift_letter(letter, key)
     """shifts letter from key positions
@@ -34,3 +34,6 @@ for shift in -1:-1:-25  # returns decyphered messages
                         # given keys ranging from 1 to 25
     println(shift, " ", shift_message(ONE_B, shift))
 end
+using StatsBase
+
+countmap(letter for letter in ONE_B)
