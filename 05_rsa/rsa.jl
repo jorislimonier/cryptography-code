@@ -1,33 +1,27 @@
 using Primes
-include("./utils/utils.jl")
 
-p = 29
-q = 53
-modulus = p * q
+function φ(modulus)
+    return totient(modulus)
+end
 
-public_exp = 3
-private_exp = 971
-public_key = (1537, 3)
+p = 10243
+q = 35897
+public_exp = 9007 # e
+
+modulus = p * q # n
+private_exp = invmod(public_exp, φ(modulus))
+public_key = (modulus, public_exp)
 private_key = (modulus, private_exp)
 
-phi = (p - 1) * (q - 1)
+MESSAGE = 37120 # m
 
-message = 101
-
-function encrypt()
-    return message^public_exp % modulus
+function encrypt(message)
+    return powermod(message, public_exp,  modulus)
 end
 
-c = encrypt()
+encrypted_message = encrypt(MESSAGE)
 
-function decrypt()
-    return (c^private_exp) % modulus
+function decrypt(encrypted_message)
+    return powermod(encrypted_message, private_exp, modulus)
 end
-
-decrypt()
-
-a = 241
-b = 46
-
-s0, t0 = Utils.eucl_ext_alg(a, b)
-s0 * a + t0 * b
+decrypt(encrypted_message)

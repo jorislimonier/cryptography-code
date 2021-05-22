@@ -5,7 +5,7 @@ using Primes
 computes the bezout coefficients of a and b
 using the euclidian extended algorithm
 """
-function get_bez_coef(input1, input2)
+function bez_coef(input1, input2)
     rest = [input1 input2]
     bez_coef = [[1, 0] [0, 1]]
 
@@ -18,7 +18,7 @@ function get_bez_coef(input1, input2)
 end
 
 """
-If p is prime, compute it's inverse,
+If modulus is prime, compute it's inverse,
 else throw and ArgumentError
 """
 function get_inverse(some_int, modulus)
@@ -31,5 +31,5 @@ end
 end
 
 
-Utils.get_bez_coef(240, 46)
+Utils.bez_coef(240, 46)
 Utils.get_inverse(3, 29)
