@@ -1,29 +1,19 @@
 # Cryptography code
 
-Coding / decoding of several ciphers ( details below).
+Coding / decoding of several ciphers (details below).
 
 ## Table of contents
 
+- [Folder structure](#folder-structure)
 - [Codes implemented](#codes-implemented)
-  - [Folder structure](#folder-structure)
 - [TODO](#todo)
-- [Log](#log)
 - [Contributions](#contributions)
   - [Future contributions](#future-contributions)
   - [Past contributions](#past-contributions)
 - [Get in touch](#get-in-touch)
+- [Log](#log)
 
-## Codes implemented
-
-|                 | Julia | Python | R                                                      |
-| --------------- | ----- | ------ | ------------------------------------------------------ |
-| Caesar cipher   | Yes   | Yes    | No                                                     |
-| Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
-| Substitution    | Yes   | No     | No                                                     |
-| Permutation     | Yes   | No     | No                                                     |
-| RSA             | Yes   | No     | No                                                     |
-
-### Folder structure
+## Folder structure
 
 ```
 |
@@ -39,6 +29,16 @@ Coding / decoding of several ciphers ( details below).
 └── RSA
     └── RSA Julia
 ```
+
+## Codes implemented
+
+|                 | Julia | Python | R                                                      |
+| --------------- | ----- | ------ | ------------------------------------------------------ |
+| Caesar cipher   | Yes   | Yes    | No                                                     |
+| Vigenère cipher | Yes   | Yes    | Yes [(link)](https://plaaschou.shinyapps.io/Decypher/) |
+| Substitution    | Yes   | No     | No                                                     |
+| Permutation     | Yes   | No     | No                                                     |
+| RSA             | Yes   | No     | No                                                     |
 
 ## TODO
 
