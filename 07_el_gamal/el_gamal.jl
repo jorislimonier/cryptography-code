@@ -9,3 +9,4 @@ shared_common_key = (g^a % p) ^ b % p
 
 x = 5
 y = x * shared_common_key % p
+
