@@ -4,7 +4,7 @@ Coding / decoding of several ciphers ( details below).
 
 ## Table of contents
 
-- [Codes implemented](#odes-implemented)
+- [Codes implemented](#codes-implemented)
   - [Folder structure](#folder-structure)
 - [TODO](#todo)
 - [Log](#log)
@@ -37,17 +37,11 @@ Coding / decoding of several ciphers ( details below).
 ├── Permutation
 |   └── Permutation Julia
 └── RSA
-    └── RSA Julia (under construction)
+    └── RSA Julia
 ```
 
 ## TODO
 
-- **Python**
-  - Finish Vigenère
-    1. Use most likely keys lengths to get key
-    2. **Frequency analysis:** Compare frequency of letters with english and french (switching from french to english should simply be a change of parameter :arrow_right: use dataframe `df_freq_letter`)
-  - Class-ify the code because it's cooler
-  - Add documentation in readme to explain the train of thought for each file
 - **R**
   - Add documentation
   - Add useful error message when no key is input (Vigenère)
@@ -72,6 +66,10 @@ For any question/remark, please feel free to email me at joris.limonier.001@stud
 
 <details>
 <summary>Click to open</summary>
+
+#### 22/05/21:
+
+- Finish RSA implemention in Julia.
 
 #### 28/04/21:
 
